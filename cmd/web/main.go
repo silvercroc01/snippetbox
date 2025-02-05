@@ -8,18 +8,21 @@ import (
 	"os"
 
 	_ "github.com/go-sql-driver/mysql"
+
+	"github.com/rmridul/snippetbox/pkg/models/mysql"
 )
 
 type application struct {
 	errorLog *log.Logger
 	infoLog  *log.Logger
+	snippets *mysql.SnippetModel
 }
 
 func main() {
 	addr := flag.String("addr", ":4000", "HTTP network address")
 	dsn := flag.String(
 		"dsn",
-    "web:secret@tcp(localhost:3307)/snippetbox?parseTime=true",
+		"web:secret@tcp(localhost:3307)/snippetbox?parseTime=true",
 		"mysql database",
 	)
 	flag.Parse()
@@ -36,6 +39,7 @@ func main() {
 	app := &application{
 		errorLog: errorLog,
 		infoLog:  infoLog,
+		snippets: &mysql.SnippetModel{DB: db},
 	}
 
 	srv := &http.Server{
