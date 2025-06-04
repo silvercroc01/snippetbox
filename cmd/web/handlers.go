@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/rmridul/snippetbox/pkg/models"
+	"github.com/silvercroc01/snippetbox/pkg/models"
 )
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {

@@ -1,4 +1,4 @@
-module github.com/rmridul/snippetbox
+module github.com/silvercroc01/snippetbox
 
 go 1.23.3
 

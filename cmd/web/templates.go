@@ -1,6 +1,6 @@
 package main
 
-import "github.com/rmridul/snippetbox/pkg/models"
+import "github.com/silvercroc01/snippetbox/pkg/models"
 
 type templateData struct {
 	Snippet  *models.Snippet
